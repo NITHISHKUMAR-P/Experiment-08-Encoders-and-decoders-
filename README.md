@@ -77,7 +77,7 @@ Program for Endocers and Decoders  and verify its truth table in quartus using V
 Developed by: Nithishkumar P
 RegisterNumber:  212221230070
 
-module enc(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+module encod(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
 input d0,d1,d2,d3,d4,d5,d6,d7;
 output a,b,c;
 or(a,d4,d5,d6,d7);
@@ -118,7 +118,7 @@ Developed by: Nithishkumar P
 RegisterNumber:  212221230070
 
 
-module enc(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+module dcod(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
 input a,b,c;
 output d0,d1,d2,d3,d4,d5,d6,d7;
 assign d0 = (~a&~b&~c);
