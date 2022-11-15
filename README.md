@@ -1,7 +1,13 @@
 # Experiment-08- Encoders-and-decoders 
-### AIM: To implement 8 to 3 Encoder and  3to8 Decoder using verilog and validate its outputs
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
+### AIM: 
+To implement 8 to 3 Encoder and  3to8 Decoder using verilog and validate its outputs
+
+### HARDWARE REQUIRED:  
+– PC, Cyclone II , USB flasher
+
+### SOFTWARE REQUIRED:  
+Quartus prime
+
 ### THEORY 
 
 ## Encoders
@@ -55,25 +61,37 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+1.create module encoder and decoder.
+
+2.Get inputs and outputs for encoders and decoders.
+
+3.perform or operation for encoder and and logic for decoders.
+
+4.perform RTL LOGIC and get waveform.
 
 
 
-### PROGRAM 
-/*
+### PROGRAM (ENCODER)
+```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: Nithishkumar P
+RegisterNumber:  212221230070
 
-
-
+module enc(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input d0,d1,d2,d3,d4,d5,d6,d7;
+output a,b,c;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
 
 
 
 ### RTL LOGIC  
 
 
+![image](enrtl.PNG)
 
 
 
@@ -83,14 +101,51 @@ RegisterNumber:
 ### TIMING DIGRAMS  
 
 
+![W](enwave.PNG)
 
 
 
 ### TRUTH TABLE 
 
 
+![enc](https://user-images.githubusercontent.com/94154683/171545485-081f0497-5689-49ba-9e62-f1e1ead2c234.png)
 
 
+### PROGRAM(DECODER):
+```
+Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
+Developed by: Nithishkumar P
+RegisterNumber:  212221230070
+
+
+module enc(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+
+endmodule 
+```
+### RTL LOGIC:
+
+![image](dertl.PNG)
+
+
+### TIMING DIAGRAM:
+
+
+![image](dewave.PNG)
+
+
+### TRUTH TABLE:
+![decoder6](https://user-images.githubusercontent.com/94154683/171546126-a5486670-9948-4b5d-aba6-dcad149b283b.png)
 
 
 ### RESULTS 
+Thus the program to desing encoder and decoder is done.
